@@ -10,3 +10,5 @@ This document tracks all security vulnerabilities handled in this fork.
 - Every CVE must be linked to a **specific commit or PR**
 - Fixes must include tests when applicable
 - Only **security-related changes** are tracked here
+
+| N/A (Hardening) | Low | API headers | Clickjacking / MIME sniffing | Add security headers (nosniff, DENY, no-referrer) | link | Fixed | 2025-12-19 |

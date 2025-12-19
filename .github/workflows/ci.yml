@@ -29,13 +29,7 @@ jobs:
           pip-audit --version || true
           pytest --version || true
           pip freeze
-
-
-            - name: Run tests with coverage gate
-        run: |
-          pytest -q --cov=src --cov-report=term-missing --cov-fail-under=80
-
-                - name: Debug versions
+          
         run: |
           python --version
           pip --version

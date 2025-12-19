@@ -1,0 +1,21 @@
+
+---
+
+# 8) Направи 1 “примерен security patch” commit (много ценен сигнал)
+Ще добавим дребна защита, която изглежда като реален patch.
+
+### 8.1 Edit `src/app.py` и добави security headers (simple, реалистично)
+Замени файла с това:
+
+```python
+from fastapi import FastAPI, Response
+
+app = FastAPI(title="API Resilience Fork")
+
+@app.get("/health")
+def health(response: Response):
+    # Minimal security headers (defense-in-depth)
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["Referrer-Policy"] = "no-referrer"
+    return {"status": "ok"}
